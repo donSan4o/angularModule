@@ -16,13 +16,20 @@ import { PostsComponent } from './components/posts/posts.component';
 import { PostComponent } from './components/post/post.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostDetailPageComponent } from './pages/post-detail-page/post-detail-page.component';
-
+import { CarsPageComponent } from './pages/cars-page/cars-page.component';
+import { CarsComponent } from './components/cars/cars.component';
+import { CarComponent } from './components/car/car.component';
+import { CarFormComponent } from './components/car-form/car-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {
-        path: '', redirectTo: 'users', pathMatch: 'full'
+        path: '', redirectTo: 'cars', pathMatch: 'full'
+      },
+      {
+        path: 'cars', component: CarsPageComponent
       },
       {
         path: 'users', component: UsersPageComponent, children: [
@@ -56,12 +63,17 @@ const routes: Routes = [
     PostComponent,
     UserDetailPageComponent,
     PostDetailsComponent,
-    PostDetailPageComponent
+    PostDetailPageComponent,
+    CarsPageComponent,
+    CarsComponent,
+    CarComponent,
+    CarFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

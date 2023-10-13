@@ -1,7 +1,11 @@
-const baseURL = "https://jsonplaceholder.typicode.com";
+import { environment } from "src/environments/environment.development";
 
-const users = `${baseURL}/users`;
-const posts = `${baseURL}/posts`;
+const {API} = environment;
+const jsonPlaceholderURL = "https://jsonplaceholder.typicode.com";
+
+const users = `${jsonPlaceholderURL}/users`;
+const posts = `${jsonPlaceholderURL}/posts`;
+const cars = `${API}/cars`
 
 const urls = {
     users: {
@@ -11,6 +15,10 @@ const urls = {
     posts: {
         base: posts,
         byId:(id: number): string => `${posts}/${id}`
+    },
+    cars: {
+        base: cars,
+        byId: (id: number): string => `${cars}/${id}`
     }
 }
 
