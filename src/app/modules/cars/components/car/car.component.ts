@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ICar } from 'src/app/interfaces/car.interface';
 
 @Component({
   selector: 'app-car',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./car.component.less']
 })
 export class CarComponent {
-
+  @Input()
+  car: ICar
 }

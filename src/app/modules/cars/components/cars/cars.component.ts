@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CarService } from '../../../../services/car.service';
 import { ICar } from 'src/app/interfaces/car.interface';
 
@@ -8,8 +8,10 @@ import { ICar } from 'src/app/interfaces/car.interface';
   styleUrls: ['./cars.component.less']
 })
 export class CarsComponent {
-  cars: ICar
-  
+  @Input()
+  cars: ICar[]
+  panelOpenState: boolean
+
   constructor(private carService: CarService){
 
   }

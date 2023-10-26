@@ -5,6 +5,7 @@ import { CarsRoutingModule } from './cars-routing.module';
 import { CarsComponent } from './components/cars/cars.component';
 import { CarComponent } from './components/car/car.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -17,7 +18,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   imports: [
     CommonModule,
     CarsRoutingModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule
   ]
 })
 export class CarsModule { }

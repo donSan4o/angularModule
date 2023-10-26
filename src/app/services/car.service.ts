@@ -14,8 +14,8 @@ export class CarService {
 
   }
 
-  getAll():Observable<IPagination<ICar>>{
-    return this.httpClient.get<IPagination<ICar>>(urls.cars)
+  getAll(page=1):Observable<IPagination<ICar>>{
+    return this.httpClient.get<IPagination<ICar>>(urls.cars, {params:{page}})
   }
 
   
